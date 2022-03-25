@@ -11,10 +11,10 @@ from datetime import datetime
 script_init_time = time()
 chdir(path.dirname(argv[0]))
 Error_Codes = [ "INFO",    # ID 0
-				"WARNING", # ID 1
-				"ERROR",   # ID 2
-				"CRITICAL" # ID 3
-				]
+			"WARNING", # ID 1
+			"ERROR",   # ID 2
+			"CRITICAL" # ID 3
+			]
 class Logging:
 	Timestamp_Setting = "LOCALTIME"
 	Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
