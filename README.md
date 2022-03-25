@@ -25,3 +25,21 @@ Default Code Numbers:
                 ]
 
 and it will handle the rest of work. Works really fast, takes almost no memory and is very simple yet advanced and scalable
+
+
+
+EXAMPLE USAGE:
+
+[
+
+
+      from Logger.py import *
+      Logging.log(1, "Hey, How Ya Doing?") 
+      
+]
+
+Will Produce:
+
+      [xx:xx:xx]> [WARNING] - Hey, How Ya Doing?
+      
+
