@@ -17,7 +17,7 @@ sent through logging command will end up printed on end-user's screen. It can be
 
 **TO USE:**
 
-	# PUT AT YOUR TOP OF THE SCRIPT
+	# PUT AT THE TOP OF YOUR SCRIPT TO INCLUDE THIS MODULE
 	from Logger import *
 	(or)
 	from Logger_Stripped import * # If Using Stripped Version    
