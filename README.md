@@ -4,9 +4,12 @@ Basically it will handles the heavy work, while leaves the blazing fast performa
 Works really fast, takes almost no memory and is very simple yet advanced and scalable.
 The actual script itself consists of less than 90 lines - very **simple** 
 and **robust**, making it **very efficient**.
+"ifprint" variable is not required, as by default it is set to **True**, meaning all messages
+sent through logging command will end up printed on end-user's screen. It can be toggled to 
+**False** to be logged in the file quietly with no output. *(e.g. for back-end logging)*
 
-    from Logger.py import *
-    Logging.log(CODE_NUMBER~MUST BE INTEGER~, MESSAGE~STRING~) 
+    from Logger.py import *                             # PUT AT YOUR TOP OF THE SCRIPT
+    Logging.log(CODE_NUMBER~INTEGER~, MESSAGE~STRING~, ifprint~True/False~)  # PUT EVERYWHERE IN YOUR CODE WHERE YOU WANT TO LOG
 
 **Default Code Numbers:**
 *( You can change and create your own anytime )*
