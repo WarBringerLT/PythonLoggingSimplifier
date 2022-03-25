@@ -9,7 +9,7 @@ sent through logging command will end up printed on end-user's screen. It can be
 **False** to be logged in the file quietly with no output. *(e.g. for back-end logging)*
 
     # PUT AT YOUR TOP OF THE SCRIPT
-    from Logger.py import *    
+    from Logger import *    
     
     # PUT EVERYWHERE IN YOUR CODE WHERE YOU WANT TO LOG
     Logging.log(CODE_NUMBER~INTEGER~, MESSAGE~STRING~, ifprint~True/False~)  
