@@ -12,7 +12,7 @@ Default Code Numbers:
                 
     Error_Codes = [
                 
-                "INFO",     ID 0
+                "INFO",    # ID 0
 
                 "WARNING", # ID 1
                 
