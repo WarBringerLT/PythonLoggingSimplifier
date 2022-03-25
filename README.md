@@ -8,8 +8,11 @@ and **robust**, making it **very efficient**.
 sent through logging command will end up printed on end-user's screen. It can be toggled to 
 **False** to be logged in the file quietly with no output. *(e.g. for back-end logging)*
 
-    from Logger.py import *                             # PUT AT YOUR TOP OF THE SCRIPT
-    Logging.log(CODE_NUMBER~INTEGER~, MESSAGE~STRING~, ifprint~True/False~)  # PUT EVERYWHERE IN YOUR CODE WHERE YOU WANT TO LOG
+    # PUT AT YOUR TOP OF THE SCRIPT
+    from Logger.py import *    
+    
+    # PUT EVERYWHERE IN YOUR CODE WHERE YOU WANT TO LOG
+    Logging.log(CODE_NUMBER~INTEGER~, MESSAGE~STRING~, ifprint~True/False~)  
 
 **Default Code Numbers:**
 *( You can change and create your own anytime )*
