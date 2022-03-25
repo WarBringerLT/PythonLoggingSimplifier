@@ -12,12 +12,8 @@ from time import ctime, time
 from datetime import datetime
 ### [All Other Dependent Modules] END
 
-
 ### [SCRIPT INIT]
-
 script_init_time = time() # Calculate how long it took for the module to load later
-
-
 chdir(path.dirname(argv[0])) # CHANGE THE SCRIPT WORKING  DIRECTORY TO .py File Location
 
 ## [CODE LEVELS]
@@ -29,17 +25,11 @@ Error_Codes = [ "INFO",    # ID 0
 				]
 
 ## [CODE LEVELS] END
-
-
 ### [SCRIPT INIT] END
 
-
 ## [MAIN PRINT AND SAVE MODULE]
-
 class Logging:
-
 	def __init__(self):
-  
 		self.Timestamp = ""
 		# SELECT MODE: LOCALTIME (LOCALTIME OF PC)
 		# SELECT MODE: RUNTIME (RUNTIME of the app)
@@ -99,8 +89,9 @@ if __name__ == "__main__": # IF SCRIPT IS LAUNCHED DIRECTLY
 		Code_Number = int(Error_Codes.index(item))
 		Logging.log(Code_Number,f"Testing Error Code: {item} (CODE: {Code_Number})")
 
-	
 
+##### README:
+#
 # TO USE IN YOUR OWN PYTHON SCRIPT (TO YOUR OTHER FILE ADD)
 #
 # from Logger.py import *
