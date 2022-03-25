@@ -18,11 +18,11 @@ chdir(path.dirname(argv[0])) # CHANGE THE SCRIPT WORKING  DIRECTORY TO .py File 
 
 ## [CODE LEVELS]
 Error_Codes = [ "INFO",    # ID 0
-				"WARNING", # ID 1
-				"ERROR",   # ID 2
-				"CRITICAL" # ID 3
-						   # Continue etc...
-				]
+		"WARNING", # ID 1
+		"ERROR",   # ID 2
+		"CRITICAL" # ID 3
+				   # Continue etc...
+		]
 
 ## [CODE LEVELS] END
 ### [SCRIPT INIT] END
