@@ -1,10 +1,9 @@
 # Python Logging Simplifier
-It will automatically create log folder, create log file, and insert and add all data. 
-TO USE IN YOUR OWN PYTHON SCRIPT (TO YOUR OTHER FILE ADD)
-and it will handle the rest of work. Works really fast,
-takes almost no memory and is very simple yet advanced and scalable.
-The actual script itself consists of less
-than 90 lines - very **simple** and **robust**, making it **very efficient**
+It will automatically create log folder, create log file, and insert and add all data.
+Basically it will handles the heavy work, while leaves the blazing fast performance.
+Works really fast, takes almost no memory and is very simple yet advanced and scalable.
+The actual script itself consists of less than 90 lines - very **simple** 
+and **robust**, making it **very efficient**.
 
     from Logger.py import *
     Logging.log(CODE_NUMBER~MUST BE INTEGER~, MESSAGE~STRING~) 
