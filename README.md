@@ -43,12 +43,12 @@ Under it, you can customise it to your liking.
 
 DEFAULT SETTINGS:
 
-    self.Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
-		self.Todays_Date = datetime.today().strftime('%d-%m-%Y')
-		self.Log_Folder = "Logs/"
-		self.Log_File   = self.Log_Folder + self.Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
-		self.Verbose_Output = True # True/False - Whether show output from Logging Module
-		
-		# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
-		# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
-		self.Timestamp_Setting = "LOCALTIME"
+	self.Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
+	self.Todays_Date = datetime.today().strftime('%d-%m-%Y')
+	self.Log_Folder = "Logs/"
+	self.Log_File   = self.Log_Folder + self.Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
+	self.Verbose_Output = True # True/False - Whether show output from Logging Module
+
+	# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
+	# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
+	self.Timestamp_Setting = "LOCALTIME"
