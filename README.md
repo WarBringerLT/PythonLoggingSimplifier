@@ -8,8 +8,10 @@ Logging.log(CODE_NUMBER, MESSAGE)
 
 Default Code Numbers:
 ( You can change and create your own anytime )
-Error_Codes = [
-
+[ 
+                
+                Error_Codes = [
+                
                 "INFO",     ID 0
 
                 "WARNING", # ID 1
