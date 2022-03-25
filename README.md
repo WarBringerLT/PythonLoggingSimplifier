@@ -9,14 +9,18 @@ and **robust**, making it **very efficient**.
 sent through logging command will end up printed on end-user's screen. It can be toggled to 
 **False** to be logged in the file quietly with no output. *(e.g. for back-end logging)*
 
+**THERE IS ALSO STRIPPED VERSION AVAILABLE - ** Removed Comments, Polished Code, Shortened Lines - **ALL UNDER 50 LINES OF CODE** - AMAZING IF YOU ASK ME :))
+
 **TO INSTALL:**
-- Download 'logger.py' file
+- Download 'logger.py' file (or logger_stripped.py)
 - Put in the same folder as your other .py files
 
 **TO USE:**
 
 	# PUT AT YOUR TOP OF THE SCRIPT
-	from Logger import *    
+	from Logger import *
+	(or)
+	from Logger_Stripped import * # If Using Stripped Version    
 	
 	Logger = Logging() # Initialize Logger Script
 
