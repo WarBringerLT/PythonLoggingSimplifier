@@ -43,7 +43,7 @@ class Logging:
 		if not path.isdir(self.Log_Folder):
 			if Logging.Verbose_Output:
 				print(f"{self.Timestamp} Logs Folder was not found - attempting to create one...")
-			mkdir(Log_Folder)
+			mkdir(self.Log_Folder)
 
 		# Code below will check whether there's today's file generated already, if not, generate one.
 		if not path.isfile(self.Log_File):
