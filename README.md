@@ -40,8 +40,14 @@ sent through logging command will end up printed on end-user's screen. It can be
 
 **EXAMPLE USAGE:**
 
-      from Logger.py import *
-      Logging.log(1, "Hey, How Ya Doing?") 
+    from Logger.py import *
+    Logger = Logging() # Initialize Logger Script
+    Logging.log(Logger,0,"Starting Script...") 
+    # < Code Below > 
+    # blah blah..
+    # < More Code Below >
+    Logging.log(Logger,3,"Exiting Script...") 
+    exit()
 
 **Will Produce:**
 
