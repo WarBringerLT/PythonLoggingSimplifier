@@ -25,19 +25,16 @@ Error_Codes = [ "INFO",    # ID 0
 
 ## [MAIN PRINT AND SAVE MODULE]
 class Logging:
-	# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
-	# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s]  ]
-	Timestamp_Setting = "LOCALTIME"
-	Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
 	Todays_Date = datetime.today().strftime('%d-%m-%Y')
 	Log_Folder = "Logs/"
 	Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
 	Verbose_Output = True # True/False - Whether show output from Logging Module
 	
-	def __init__(self):	
+	def __init__(self):
+		
 		# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
 		# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
-		self.Timestamp_Setting = Logging.Timestamp_Setting
+		self.Timestamp_Setting = "LOCALTIME"
 		
 		if self.Timestamp_Setting == "LOCALTIME": self.Timestamp = datetime.now().strftime('[%H:%M:%S]>')
 		elif self.Timestamp_Setting == "RUNTIME": self.Timestamp = f"[{round(time()-script_init_time,3)}s]>"
@@ -63,7 +60,8 @@ class Logging:
 		# ifprint = if True (default) will print the message to app
 		#however, messages can be suppresed (to log only) with no output/silent
 		#if specified with False parameter
-		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}] - {message}"
+
+		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
 		f = open(Logging.Log_File,'a')
 		f.write('\n'+FinalLog)
 		f.close()
@@ -73,9 +71,10 @@ class Logging:
 			except TypeError:
 				Logging.print(code, message)
 		return True
+
 	def print(self, code, message):
 		# Output of the Log After Storing
-		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}] - {message}"
+		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
 		print(FinalLog)
 		return True
 
