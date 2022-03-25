@@ -35,4 +35,6 @@ Will Produce:
 
       [xx:xx:xx]> [WARNING] - Hey, How Ya Doing?
       
-
+All Other Customisable Settings Will be in the **Logging.py** File.
+Around Line ~40 There should be - **LOOK FOR def __init__(self):** 
+Under it, you can customise it to your liking.
