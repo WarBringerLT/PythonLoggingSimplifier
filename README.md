@@ -3,6 +3,7 @@ It will automatically create log folder, create log file, and insert and add all
 TO USE IN YOUR OWN PYTHON SCRIPT (TO YOUR OTHER FILE ADD)
 
 from Logger.py import *
+
 Logging.log(CODE_NUMBER, MESSAGE) 
 
 
