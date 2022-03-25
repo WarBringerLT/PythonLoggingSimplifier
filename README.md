@@ -3,13 +3,15 @@ It will automatically create log folder, create log file, and insert and add all
 TO USE IN YOUR OWN PYTHON SCRIPT (TO YOUR OTHER FILE ADD)
 and it will handle the rest of work. Works really fast,
 takes almost no memory and is very simple yet advanced and scalable.
+The actual script itself consists of less
+than 90 lines - very **simple** and **robust**, making it **very efficient**
 
     from Logger.py import *
     Logging.log(CODE_NUMBER~MUST BE INTEGER~, MESSAGE~STRING~) 
 
-Default Code Numbers:
-( You can change and create your own anytime )
-                
+**Default Code Numbers:**
+*( You can change and create your own anytime )*
+
     Error_Codes = [
                 "INFO",    # ID 0
                 "WARNING", # ID 1
@@ -18,13 +20,11 @@ Default Code Numbers:
                 # Continue etc...
                 ]
 
-EXAMPLE USAGE:
-
+**EXAMPLE USAGE:**
       from Logger.py import *
       Logging.log(1, "Hey, How Ya Doing?") 
 
-Will Produce:
-
+**Will Produce:**
       [xx:xx:xx]> [WARNING] - Hey, How Ya Doing?
       
 All Other Customisable Settings Will be in the **Logging.py** File.
