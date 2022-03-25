@@ -11,17 +11,17 @@ from datetime import datetime
 script_init_time = time()
 chdir(path.dirname(argv[0]))
 Error_Codes = [ "INFO",    # ID 0
-				"WARNING", # ID 1
-				"ERROR",   # ID 2
-				"CRITICAL" # ID 3
-				]
+		"WARNING", # ID 1
+		"ERROR",   # ID 2
+		"CRITICAL" # ID 3
+		]
 class Logging:
 	Timestamp_Setting = "LOCALTIME"
-	Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
+	Timestamp = ""
 	Todays_Date = datetime.today().strftime('%d-%m-%Y')
 	Log_Folder = "Logs/"
-	Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
-	Verbose_Output = True # True/False - Whether show output from Logging Module
+	Log_File   = Log_Folder + Todays_Date + '.ini'
+	Verbose_Output = True 
 	def __init__(self):
 		self.Timestamp_Setting = Logging.Timestamp_Setting
 		if self.Timestamp_Setting == "LOCALTIME": self.Timestamp = datetime.now().strftime('[%H:%M:%S]>')
@@ -34,7 +34,6 @@ class Logging:
 			logfile = open(self.Log_File,'w')
 			logfile.write(f"#> Log File was first generated at {ctime()}.")
 			logfile.close()
-
 	def log(self, code, message, ifprint = True):
 		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}] - {message}"
 		f = open(Logging.Log_File,'a')
@@ -45,7 +44,6 @@ class Logging:
 			except TypeError: Logging.print(code, message)
 		return True
 	def print(self, code, message):
-		# Output of the Log After Storing
 		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}] - {message}"
 		print(FinalLog)
 		return True
