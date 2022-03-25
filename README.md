@@ -21,10 +21,12 @@ than 90 lines - very **simple** and **robust**, making it **very efficient**
                 ]
 
 **EXAMPLE USAGE:**
+
       from Logger.py import *
       Logging.log(1, "Hey, How Ya Doing?") 
 
 **Will Produce:**
+
       [xx:xx:xx]> [WARNING] - Hey, How Ya Doing?
       
 All Other Customisable Settings Will be in the **Logging.py** File.
