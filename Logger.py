@@ -35,8 +35,7 @@ class Logging:
 		# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
 		# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
 		self.Timestamp_Setting = "LOCALTIME"
-		
-		if self.Timestamp_Setting == "LOCALTIME": self.Timestamp = datetime.now().strftime('[%H:%M:%S]>')
+		if self.Timestamp_Setting == "LOCALTIME": self.Timestamp = datetime.now().strftime('[%H:%M:%S] ')
 		elif self.Timestamp_Setting == "RUNTIME": self.Timestamp = f"[{round(time()-script_init_time,3)}s]>"
 			
 		# Code below will check whether LOGS FOLDER exists, if not, generate one
@@ -66,15 +65,13 @@ class Logging:
 		f.write('\n'+FinalLog)
 		f.close()
 		if Logging.Verbose_Output or ifprint:
-			try:
-				Logging.print(self, code, message)
-			except TypeError:
-				Logging.print(code, message)
+			try: Logging.print(self, code, message)
+			except TypeError: Logging.print(code, message)
 		return True
 
 	def print(self, code, message):
 		# Output of the Log After Storing
-		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
+		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}]: {message}"
 		print(FinalLog)
 		return True
 
