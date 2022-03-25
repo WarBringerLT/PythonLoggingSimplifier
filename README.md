@@ -17,8 +17,15 @@ sent through logging command will end up printed on end-user's screen. It can be
 	# PUT AT YOUR TOP OF THE SCRIPT
 	from Logger import *    
 	
+	Logger = Logging() # Initialize Logger Script
+
 	# PUT EVERYWHERE IN YOUR CODE WHERE YOU WANT TO LOG
-	Logging.log(CODE_NUMBER~INTEGER~, MESSAGE~STRING~, ifprint~True/False~)  
+	
+	Logging.log(Logger,0,"Hello") 
+	
+	# logger - Use Before initialized logger,
+	# then enter Error Code (e.g. 0)
+	# and finally enter the message to log (e.g. "Hello")
 
 **Default Code Numbers:**
 *( You can change and create your own anytime )*
