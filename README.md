@@ -1,4 +1,4 @@
-# PythonLoggingSimplifier
+# Python Logging Simplifier
 It will automatically create log folder, create log file, and insert and add all data. 
 TO USE IN YOUR OWN PYTHON SCRIPT (TO YOUR OTHER FILE ADD)
 and it will handle the rest of work. Works really fast,
