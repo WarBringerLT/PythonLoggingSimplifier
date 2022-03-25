@@ -11,25 +11,17 @@ Default Code Numbers:
 ( You can change and create your own anytime )
                 
     Error_Codes = [
-                
                 "INFO",    # ID 0
-
                 "WARNING", # ID 1
-                
                 "ERROR",   # ID 2
-                
                 "CRITICAL" # ID 3
-                
                 # Continue etc...
-                
                 ]
-
 
 EXAMPLE USAGE:
 
       from Logger.py import *
       Logging.log(1, "Hey, How Ya Doing?") 
-      
 
 Will Produce:
 
@@ -40,8 +32,7 @@ Around Line ~40 There should be - **LOOK FOR def __init__(self):**
 Under it, you can customise it to your liking.
 
 
-
-DEFAULT SETTINGS:
+**DEFAULT SETTINGS:**
 
 	self.Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
 	self.Todays_Date = datetime.today().strftime('%d-%m-%Y')
