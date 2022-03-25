@@ -43,17 +43,12 @@ Under it, you can customise it to your liking.
 
 DEFAULT SETTINGS:
 
-    self.Timestamp = ""
-    # SELECT MODE: LOCALTIME (LOCALTIME OF PC)
-    # SELECT MODE: RUNTIME (RUNTIME of the app)
-    self.Timestamp_Setting = "LOCALTIME"
-    self.Todays_Date = datetime.today().strftime('%d-%m-%Y')
-    self.Log_Folder = "Logs/"
-    self.Log_File   = self.Log_Folder + self.Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
-
-    if self.Timestamp_Setting == "LOCALTIME":
-        self.Timestamp = datetime.now().strftime('[%H:%M:%S]>')
-    elif self.Timestamp_Setting == "RUNTIME":
-        self.Timestamp = f"[{round(time()-script_init_time,3)}s]>"
-
-    self.Verbose_Output = True # True/False - Whether show output from Logging Module
+    self.Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
+		self.Todays_Date = datetime.today().strftime('%d-%m-%Y')
+		self.Log_Folder = "Logs/"
+		self.Log_File   = self.Log_Folder + self.Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
+		self.Verbose_Output = True # True/False - Whether show output from Logging Module
+		
+		# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
+		# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
+		self.Timestamp_Setting = "LOCALTIME"
