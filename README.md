@@ -51,7 +51,10 @@ sent through logging command will end up printed on end-user's screen. It can be
 
 **Will Produce:**
 
-      [xx:xx:xx]> [WARNING] - Hey, How Ya Doing?
+      [xx:xx:xx]> [INFO] Starting Script...
+      < ... >
+      [xx:xx:xx]> [CRITICAL] Exiting Script...
+      
       
 All Other Customisable Settings Will be in the **Logging.py** File.
 Around Line ~28 There should be - **LOOK FOR def __init__(self):** 
