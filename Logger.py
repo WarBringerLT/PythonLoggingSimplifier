@@ -18,21 +18,6 @@ from datetime import datetime
 script_init_time = time() # Calculate how long it took for the module to load later
 
 
-# SELECT MODE: LOCALTIME (LOCALTIME OF PC)
-# SELECT MODE: RUNTIME (RUNTIME of the app)
-Timestamp_Setting = "RUNTIME" 
-
-Todays_Date = datetime.today().strftime('%d-%m-%Y')
-Log_Folder = "Logs/"
-Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
-
-if Timestamp_Setting == "LOCALTIME":
-	Timestamp = datetime.now().strftime('[%H:%M:%S]>')
-elif Timestamp_Setting == "RUNTIME":
-	Timestamp = f"[{round(time()-script_init_time,3)}s]>"
-
-Verbose_Output = True # True/False - Whether show output from Logging Module
-
 chdir(path.dirname(argv[0])) # CHANGE THE SCRIPT WORKING  DIRECTORY TO .py File Location
 
 ## [CODE LEVELS]
@@ -45,20 +30,6 @@ Error_Codes = [ "INFO",    # ID 0
 
 ## [CODE LEVELS] END
 
-# Code below will check whether LOGS FOLDER exists, if not, generate one
-
-if not path.isdir(Log_Folder):
-	if Verbose_Output:
-		print(f"{Timestamp} Logs Folder was not found - attempting to create one...")
-	mkdir(Log_Folder)
-
-# Code below will check whether there's today's file generated already, if not, generate one.
-if not path.isfile(Log_File):
-	if Verbose_Output:
-		print(f"{Timestamp} Today's Log File was not found - attempting to create one...")
-	logfile = open(Log_File,'w')
-	logfile.write(f"#> Log File was first generated at {ctime()}.")
-	logfile.close()
 
 ### [SCRIPT INIT] END
 
@@ -66,29 +37,63 @@ if not path.isfile(Log_File):
 ## [MAIN PRINT AND SAVE MODULE]
 
 class Logging:
-	def log(code, message):
-		FinalLog = f"{Timestamp} [{Error_Codes[int(code)]}] - {message}"
-		f = open(Log_File,'a')
+
+	def __init__(self):
+  
+		self.Timestamp = ""
+		# SELECT MODE: LOCALTIME (LOCALTIME OF PC)
+		# SELECT MODE: RUNTIME (RUNTIME of the app)
+		self.Timestamp_Setting = "LOCALTIME"
+		self.Todays_Date = datetime.today().strftime('%d-%m-%Y')
+		self.Log_Folder = "Logs/"
+		self.Log_File   = self.Log_Folder + self.Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
+
+		if self.Timestamp_Setting == "LOCALTIME":
+			self.Timestamp = datetime.now().strftime('[%H:%M:%S]>')
+		elif self.Timestamp_Setting == "RUNTIME":
+			self.Timestamp = f"[{round(time()-script_init_time,3)}s]>"
+
+		self.Verbose_Output = True # True/False - Whether show output from Logging Module
+
+		# Code below will check whether LOGS FOLDER exists, if not, generate one
+
+		if not path.isdir(self.Log_Folder):
+			if Logging.Verbose_Output:
+				print(f"{self.Timestamp} Logs Folder was not found - attempting to create one...")
+			mkdir(Log_Folder)
+
+		# Code below will check whether there's today's file generated already, if not, generate one.
+		if not path.isfile(self.Log_File):
+			if self.Verbose_Output:
+				print(f"{self.Timestamp} Today's Log File was not found - attempting to create one...")
+			logfile = open(self.Log_File,'w')
+			logfile.write(f"#> Log File was first generated at {ctime()}.")
+			logfile.close()
+
+	def log(self,code, message):
+		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
+		f = open(self.Log_File,'a')
 		f.write('\n'+FinalLog)
 		f.close()
 		Logging.print(code,message)
 		return True
 
-	def print(code, message):
-		FinalLog = f"{Timestamp} [{Error_Codes[int(code)]}] - {message}"
+	def print(self,code, message):
+		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
 		print(FinalLog)
 		return True
 
 ## [MAIN PRINT AND SAVE MODULE] END
 
 ## %% ON START %% ##
+Logging = Logging()
 Logging.log(0,f"Logging Started - Init Successful - Time Taken: {time()-script_init_time}s")
 Logging.log(1,"Hey, How Ya Doing?")
 
 
 if __name__ == "__main__": # IF SCRIPT IS LAUNCHED DIRECTLY
-	print(f"Log File: {Log_File}")
-	print(f"File Directory Created: {path.isfile(Log_File)}")
+	print(f"Log File: {Logging.Log_File}")
+	print(f"File Directory Created: {path.isfile(Logging.Log_File)}")
 	print(f"Found Total: {len(Error_Codes)} Error_Codes Codes. Cycling Through All of them")
 	for item in Error_Codes:
 		Code_Number = int(Error_Codes.index(item))
