@@ -22,15 +22,17 @@ Error_Codes = [ "INFO",    # ID 0
 				"ERROR",   # ID 2
 				"CRITICAL" # ID 3
 				] # Continue etc...
-				
+
 ## [MAIN PRINT AND SAVE MODULE]
 class Logging:
+	Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
+	Todays_Date = datetime.today().strftime('%d-%m-%Y')
+	Log_Folder = "Logs/"
+	Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
+	Verbose_Output = True # True/False - Whether show output from Logging Module
+	
 	def __init__(self):
-		self.Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
-		self.Todays_Date = datetime.today().strftime('%d-%m-%Y')
-		self.Log_Folder = "Logs/"
-		self.Log_File   = self.Log_Folder + self.Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
-		self.Verbose_Output = True # True/False - Whether show output from Logging Module
+		global Timestamp,Todays_Date,Log_Folder,Log_File,Verbose_Output
 		
 		# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
 		# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
@@ -41,7 +43,7 @@ class Logging:
 			
 		# Code below will check whether LOGS FOLDER exists, if not, generate one
 		if not path.isdir(self.Log_Folder):
-			if Logging.Verbose_Output:
+			if self.Verbose_Output:
 				print(f"{self.Timestamp} Logs Folder was not found - attempting to create one...")
 			mkdir(self.Log_Folder)
 
@@ -53,7 +55,7 @@ class Logging:
 			logfile.write(f"#> Log File was first generated at {ctime()}.")
 			logfile.close()
 
-	def log(self,code, message, ifprint = True):
+	def log(self, code, message, ifprint = True):
 		# self    = self.
 		# code    = Error Code 
 		# Message = Contents of Log Message
@@ -61,26 +63,30 @@ class Logging:
 		#however, messages can be suppresed (to log only) with no output/silent
 		#if specified with False parameter
 
-		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
-		f = open(self.Log_File,'a')
+		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}] - {message}"
+		f = open(Logging.Log_File,'a')
 		f.write('\n'+FinalLog)
 		f.close()
-		if self.Verbose_Output or ifprint:
-			Logging.print(code,message)
+		if Logging.Verbose_Output or ifprint:
+			try:
+				Logging.print(self, code, message)
+			except TypeError:
+				Logging.print(code, message)
 		return True
 
-	def print(self,code, message):
+	def print(self, code, message):
 		# Output of the Log After Storing
-		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
+		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}] - {message}"
 		print(FinalLog)
 		return True
 
 ## %% ON START %% ##
-Logging = Logging() # INITIALIZE Logging System
-# Print Succesfull Start
-Logging.log(0,f"Logging Started - Init Successful - Time Taken: {time()-script_init_time}s")
+
 
 if __name__ == "__main__": # IF SCRIPT IS LAUNCHED DIRECTLY
+	Logging = Logging() # INITIALIZE Logging System
+	# Print Succesfull Start
+	Logging.log(0,f"Logging Started - Init Successful - Time Taken: {time()-script_init_time}s")
 	print(f"Log File: {Logging.Log_File}")
 	print(f"File Directory Created: {path.isfile(Logging.Log_File)}")
 	print(f"Found Total: {len(Error_Codes)} Error_Codes Codes. Cycling Through All of them")
