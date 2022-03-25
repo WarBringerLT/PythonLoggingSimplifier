@@ -73,8 +73,8 @@ class Logging:
 ## [MAIN PRINT AND SAVE MODULE] END
 
 ## %% ON START %% ##
-Logging.log(0,f"Logging Started - Init Successful - Time Taken: {script_init_time-time()}s")
-
+Logging.log(0,f"Logging Started - Init Successful - Time Taken: {time()-script_init_time}s")
+Logging.log(1,"Hey, How Ya Doing?")
 
 
 if __name__ == "__main__": # IF SCRIPT IS LAUNCHED DIRECTLY
