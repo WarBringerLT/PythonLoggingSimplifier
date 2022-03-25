@@ -17,10 +17,19 @@ from datetime import datetime
 
 script_init_time = time() # Calculate how long it took for the module to load later
 
+
+# SELECT MODE: LOCALTIME (LOCALTIME OF PC)
+# SELECT MODE: RUNTIME (RUNTIME of the app)
+Timestamp_Setting = "RUNTIME" 
+
 Todays_Date = datetime.today().strftime('%d-%m-%Y')
 Log_Folder = "Logs/"
 Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
-Timestamp = datetime.now().strftime('[%S:%M:%H]>')
+
+if Timestamp_Setting == "LOCALTIME":
+	Timestamp = datetime.now().strftime('[%H:%M:%S]>')
+elif Timestamp_Setting == "RUNTIME":
+	Timestamp = f"[{round(time()-script_init_time,3)}s]>"
 
 Verbose_Output = True # True/False - Whether show output from Logging Module
 
