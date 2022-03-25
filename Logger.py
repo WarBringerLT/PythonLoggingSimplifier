@@ -60,7 +60,7 @@ class Logging:
 		#however, messages can be suppresed (to log only) with no output/silent
 		#if specified with False parameter
 
-		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
+		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}]: {message}"
 		f = open(Logging.Log_File,'a')
 		f.write('\n'+FinalLog)
 		f.close()
