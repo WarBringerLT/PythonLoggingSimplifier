@@ -5,7 +5,7 @@ and it will handle the rest of work. Works really fast,
 takes almost no memory and is very simple yet advanced and scalable.
 
     from Logger.py import *
-    Logging.log(CODE_NUMBER, MESSAGE) 
+    Logging.log(CODE_NUMBER~MUST BE INTEGER~, MESSAGE~STRING~) 
 
 Default Code Numbers:
 ( You can change and create your own anytime )
