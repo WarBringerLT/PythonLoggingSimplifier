@@ -21,7 +21,7 @@ Error_Codes = [ "INFO",    # ID 0
 		"WARNING", # ID 1
 		"ERROR",   # ID 2
 		"CRITICAL" # ID 3
-				   # Continue etc...
+		# Continue etc...
 		]
 
 ## [CODE LEVELS] END
