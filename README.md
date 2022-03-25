@@ -12,12 +12,13 @@ sent through logging command will end up printed on end-user's screen. It can be
 - Download 'logger.py' file
 - Put in the same folder as your other .py files
 
+**TO USE:**
 
-		# PUT AT YOUR TOP OF THE SCRIPT
-		from Logger import *    
-
-		# PUT EVERYWHERE IN YOUR CODE WHERE YOU WANT TO LOG
-		Logging.log(CODE_NUMBER~INTEGER~, MESSAGE~STRING~, ifprint~True/False~)  
+	# PUT AT YOUR TOP OF THE SCRIPT
+	from Logger import *    
+	
+	# PUT EVERYWHERE IN YOUR CODE WHERE YOU WANT TO LOG
+	Logging.log(CODE_NUMBER~INTEGER~, MESSAGE~STRING~, ifprint~True/False~)  
 
 **Default Code Numbers:**
 *( You can change and create your own anytime )*
