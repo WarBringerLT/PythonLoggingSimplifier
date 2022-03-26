@@ -3,7 +3,8 @@ It will automatically create log folder, create log file, and append all logs.
 Basically it handles the heavy lifting, while leaving blazing fast performance.
 Works really fast, takes almost no memory and is very simple yet advanced and scalable.
 The actual script itself consists of less than 90 lines - very **simple** 
-and **robust**, making it **very efficient**. **THERE IS ALSO STRIPPED VERSION AVAILABLE** Removed Comments, Polished Code, Shortened Lines - **ALL UNDER 50 LINES OF CODE** - AMAZING IF YOU ASK ME :))
+and **robust**, making it **very efficient**.
+**THERE IS ALSO STRIPPED VERSION AVAILABLE** Removed Comments, Polished Code, Shortened Lines - **ALL UNDER 50 LINES OF CODE** - AMAZING IF YOU ASK ME :))
 
 
 "ifprint" parameter is not required, as by default it is set to **True**, meaning all messages
