@@ -10,7 +10,7 @@ from time import ctime, time
 from datetime import datetime
 script_init_time = time()
 chdir(path.dirname(argv[0]))
-Error_Codes = [ "INFO",    # ID 0
+Error_Codes = [ "INFO/MAIN",    # ID 0
 			"WARNING", # ID 1
 			"ERROR",   # ID 2
 			"CRITICAL" # ID 3
