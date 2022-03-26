@@ -1,15 +1,15 @@
 # Python Logging Simplifier
-It will automatically create log folder, create log file, and insert and add all data.
-Basically it will handles the heavy work, while leaves the blazing fast performance.
+It will automatically create log folder, create log file, and append all logs.
+Basically it handles the heavy lifting, while leaving blazing fast performance.
 Works really fast, takes almost no memory and is very simple yet advanced and scalable.
 The actual script itself consists of less than 90 lines - very **simple** 
-and **robust**, making it **very efficient**.
+and **robust**, making it **very efficient**. **THERE IS ALSO STRIPPED VERSION AVAILABLE** Removed Comments, Polished Code, Shortened Lines - **ALL UNDER 50 LINES OF CODE** - AMAZING IF YOU ASK ME :))
 
-"ifprint" variable is not required, as by default it is set to **True**, meaning all messages
+
+"ifprint" parameter is not required, as by default it is set to **True**, meaning all messages
 sent through logging command will end up printed on end-user's screen. It can be toggled to 
-**False** to be logged in the file quietly with no output. *(e.g. for back-end logging)*
+**False** to be logged in the file quietly with no screen-output. *(e.g. for back-end logging)*
 
-**THERE IS ALSO STRIPPED VERSION AVAILABLE** Removed Comments, Polished Code, Shortened Lines - **ALL UNDER 50 LINES OF CODE** - AMAZING IF YOU ASK ME :))
 
 **TO INSTALL:**
 - Download 'logger.py' file (or logger_stripped.py)
