@@ -18,20 +18,25 @@ sent through logging command will end up printed on end-user's screen. It can be
 
 **TO USE:**
 
-	# PUT AT THE TOP OF YOUR SCRIPT TO INCLUDE THIS MODULE
+PUT AT THE TOP OF YOUR SCRIPT TO INCLUDE THIS MODULE:
+
 	from Logger import *
-	(or)
+(or)
+
 	from Logger_Stripped import * # If Using Stripped Version    
-	
+
+And Then:
+
 	Logger = Logging() # Initialize Logger Script
 
 	# PUT EVERYWHERE IN YOUR CODE WHERE YOU WANT TO LOG
 	
-	Logging.log(Logger,0,"Hello") 
+	Logging.log(Logger,"Hello",0,False) 
 	
-	# logger - Use Before initialized logger,
-	# then enter Error Code (e.g. 0)
-	# and finally enter the message to log (e.g. "Hello")
+	# (Required) "Logger" Param - Engine That Was Initialized in the beginning of the script;
+	# (Required) Enter the message to log (e.g. "Hello")
+	# (OPTIONAL) Enter Error Code (e.g. 0)
+	# (OPTIONAL) Enter ifprint Value
 
 **Default Code Numbers:**
 *( You can change and create your own anytime )*
