@@ -77,9 +77,8 @@ Under it, you can customise it to your liking.
     # SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
     # OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s]  ]
     Timestamp_Setting = "LOCALTIME"
-    Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
     Todays_Date = datetime.today().strftime('%d-%m-%Y')
-    Log_Folder = "Logs/"
-    Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
+    Log_Folder  = "Logs/"
+    Log_File    = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
     Verbose_Output = True # True/False - Whether show output from Logging Module
     
