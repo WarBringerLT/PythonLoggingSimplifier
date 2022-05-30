@@ -1,21 +1,11 @@
-from Logger_Stripped import * # Import Logger Module To Your Script
+from Logger import * # Import Logger Module To Your Script
 
-Logger = Logging() # Initialize Logger Script
+Logger = Logging() # Initialize Logger Script # REQUIRED
 
-Logger.log("Starting Script, importing other modules")
-import os #random modules, example.
-import sys  #random modules, example.
-
-Username = os.environ.get('USERNAME')
-Logger.log(f"Logged in User: {Username}")
-
-
-
-
-
-
-
-
-
+Logger.log("Starting Script, importing other modules...") # Log as soon as the script starts, easier debugging later.
+# < Code Below > 
+# blah blah..
+# < More Code Below >
+# __ END OF SCRIPT__ 
 Logger.log(f"Script Finished! Exiting",2)
 exit(input())
