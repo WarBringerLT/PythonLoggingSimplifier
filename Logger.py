@@ -25,7 +25,6 @@ Error_Codes = [ "INFO",    # ID 0
 
 ## [MAIN PRINT AND SAVE MODULE]
 class Logging:
-	Timestamp = "" # ONLY DECLARATION OF VALUE - DO NOT EDIT - DYNAMIC CACHE VARIABLE
 	Todays_Date = datetime.today().strftime('%d-%m-%Y')
 	Log_Folder = "Logs/"
 	Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
@@ -38,8 +37,10 @@ class Logging:
 		# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
 		self.Timestamp_Setting = "LOCALTIME"
 		
-		if self.Timestamp_Setting == "LOCALTIME": self.Timestamp = datetime.now().strftime('[%H:%M:%S]>')
-		elif self.Timestamp_Setting == "RUNTIME": self.Timestamp = f"[{round(time()-script_init_time,3)}s]>"
+		if self.Timestamp_Setting == "LOCALTIME": 
+			self.Timestamp = datetime.now().strftime('[%H:%M:%S] ')
+		else: 
+			self.Timestamp = f"[{round(time()-Logging.script_init_time,3)}s]>"	
 			
 		# Code below will check whether LOGS FOLDER exists, if not, generate one
 		if not path.isdir(self.Log_Folder):
@@ -63,7 +64,7 @@ class Logging:
 		#however, messages can be suppresed (to log only) with no output/silent
 		#if specified with False parameter
 
-		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}] - {message}"
+		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
 		f = open(Logging.Log_File,'a')
 		f.write('\n'+FinalLog)
 		f.close()
@@ -76,7 +77,7 @@ class Logging:
 
 	def print(self, message, code = 0):
 		# Output of the Log After Storing
-		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}] - {message}"
+		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}]: {message}"
 		print(FinalLog)
 		return True
 
