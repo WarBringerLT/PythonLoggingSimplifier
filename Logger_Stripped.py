@@ -10,21 +10,24 @@ from time import ctime, time
 from datetime import datetime
 script_init_time = time()
 chdir(path.dirname(argv[0]))
-Error_Codes = [ "INFO/MAIN",    # ID 0
-			"WARNING", # ID 1
-			"ERROR",   # ID 2
-			"CRITICAL" # ID 3
-		]
+Error_Codes = [ "INFO",    # ID 0
+				"WARNING", # ID 1
+				"ERROR",   # ID 2
+				"CRITICAL" # ID 3
+				]
 class Logging:
 	Timestamp_Setting = "LOCALTIME"
 	Todays_Date = datetime.today().strftime('%d-%m-%Y')
 	Log_Folder = "Logs/"
 	Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
 	Verbose_Output = True # True/False - Whether show output from Logging Module
+	Timestamp = ""
+	if Timestamp_Setting == "LOCALTIME": Timestamp = datetime.now().strftime('[%H:%M:%S] ')
+	elif Timestamp_Setting == "RUNTIME": Timestamp = f"[{round(time()-script_init_time,3)}s]>"
+		
 	def __init__(self):
+
 		self.Timestamp_Setting = Logging.Timestamp_Setting
-		if self.Timestamp_Setting == "LOCALTIME": self.Timestamp = datetime.now().strftime('[%H:%M:%S] ')
-		elif self.Timestamp_Setting == "RUNTIME": self.Timestamp = f"[{round(time()-script_init_time,3)}s]>"
 		if not path.isdir(self.Log_Folder):
 			if self.Verbose_Output: print(f"{self.Timestamp} Logs Folder was not found - attempting to create one...")
 			mkdir(self.Log_Folder)
@@ -35,7 +38,7 @@ class Logging:
 			logfile.close()
 
 	def log(self, message, code = 0, ifprint = True):
-		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}]: {message}"
+		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}]: {message}"
 		f = open(Logging.Log_File,'a')
 		f.write('\n'+FinalLog)
 		f.close()
@@ -45,7 +48,7 @@ class Logging:
 		return True
 	def print(self, message, code = 0):
 		# Output of the Log After Storing
-		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}]: {message}"
+		FinalLog = f"{Logging.Timestamp} [{Error_Codes[int(code)]}]: {message}"
 		print(FinalLog)
 		return True
 if __name__ == "__main__": # IF USED IN ANOTHER SCRIPT ALL LINES BELOW (INCLUDING THIS LINE) CAN BE DELETED TO USE EVEN LESS SPACE
