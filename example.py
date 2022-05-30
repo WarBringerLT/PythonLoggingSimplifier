@@ -9,3 +9,6 @@ Logger.log("Starting Script, importing other modules...") # Log as soon as the s
 # __ END OF SCRIPT__ 
 Logger.log(f"Script Finished! Exiting",2)
 exit(input())
+
+# After running this code, have a look in the script folder, 
+# a new 'Logs' folder should appear with everything you logged.
