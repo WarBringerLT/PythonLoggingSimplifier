@@ -31,7 +31,7 @@ And Then:
 
 	# PUT EVERYWHERE IN YOUR CODE WHERE YOU WANT TO LOG
 	
-	Logging.log(Logger,"Hello",0,False) 
+	Logger.log(Logger,"Hello",0,False) 
 	
 	# (Required) "Logger" Param - Engine That Was Initialized in the beginning of the script;
 	# (Required) Enter the message to log (e.g. "Hello")
