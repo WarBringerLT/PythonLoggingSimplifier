@@ -53,11 +53,11 @@ And Then:
 
     from Logger.py import *
     Logger = Logging() # Initialize Logger Script
-    Logging.log(Logger,"Starting Script...") 
+    Logger.log(Logger,"Starting Script...") 
     # < Code Below > 
     # blah blah..
     # < More Code Below >
-    Logging.log(Logger,"Exiting Script...",3)  #Critical Exit Code
+    Logger.log(Logger,"Exiting Script...",3)  #Critical Exit Code
     exit()
 
 **Will Produce:**
