@@ -22,17 +22,10 @@ class Logging:
 	Log_Folder = "Logs/"
 	Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
 	Verbose_Output = True # True/False - Whether show output from Logging Module
-	#Timestamp = ""
-	#if Timestamp_Setting == "LOCALTIME": Timestamp = datetime.now().strftime('[%H:%M:%S] ')
-	#elif Timestamp_Setting == "RUNTIME": Timestamp = f"[{round(time()-script_init_time,3)}s]>"
-
 	def __init__(self):
+		if Logging.Timestamp_Setting == "LOCALTIME": self.Timestamp = datetime.now().strftime('[%H:%M:%S] ')
+		else: self.Timestamp = f"[{round(time()-Logging.script_init_time,3)}s]>"
 
-		
-		if Logging.Timestamp_Setting == "LOCALTIME": 
-			self.Timestamp = datetime.now().strftime('[%H:%M:%S] ')
-		else: 
-			self.Timestamp = f"[{round(time()-Logging.script_init_time,3)}s]>"	
 		if not path.isdir(self.Log_Folder):
 			if self.Verbose_Output: print(f"{self.Timestamp} Logs Folder was not found - attempting to create one...")
 			mkdir(self.Log_Folder)
@@ -56,10 +49,13 @@ class Logging:
 		return True
 if __name__ == "__main__": # IF USED IN ANOTHER SCRIPT ALL LINES BELOW (INCLUDING THIS LINE) CAN BE DELETED TO USE EVEN LESS SPACE
 	Logging = Logging() 
-	Logging.log(f"Logging Started - Init Successful - Time Taken: {time()-Logging.script_init_time}s",0)
+	Logging.log(f"Logging Started - Init Successful - Time Taken: {round(time()-Logging.script_init_time,5)}s",0)
 	print(f"Log File: {Logging.Log_File}")
 	print(f"File Directory Created: {path.isfile(Logging.Log_File)}")
 	print(f"Found Total: {len(Error_Codes)} Error_Codes Codes. Cycling Through All of them")
 	for item in Error_Codes:
 		Code_Number = int(Error_Codes.index(item))
 		Logging.log(f"Testing Error Code: {item} (CODE: {Code_Number})",Code_Number)
+
+	Logging.log(f"Logging Finished - Program Exit - Time Taken: {round(time()-Logging.script_init_time,5)}s",0)
+	exit(input())
