@@ -1,5 +1,5 @@
 <a href="https://app.codiga.io/public/user/github/WarBringerLT">
-   <img src="https://app.codiga.io/public/badge/user/github/WarBringerLT" alt="Codiga badge" />
+   <img src="https://api.codiga.io/project/33752/status/svg)" alt="Code Status" />
 </a>
 
 <a href="https://app.codiga.io/public/user/github/WarBringerLT">
