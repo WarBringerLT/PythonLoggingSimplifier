@@ -2,6 +2,10 @@
    <img src="https://app.codiga.io/public/badge/user/github/WarBringerLT" alt="Codiga badge" />
 </a>
 
+<a href="https://app.codiga.io/public/user/github/WarBringerLT">
+   <img src="https://api.codiga.io/project/33752/score/svg" alt="Code Score" />
+</a>
+
 # Python Logging Simplifier
 It will automatically create log folder, create log file, and append all logs.
 Basically it handles the heavy lifting, while leaving blazing fast performance.
