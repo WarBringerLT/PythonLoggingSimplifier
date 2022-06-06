@@ -6,7 +6,7 @@
    <img src="https://api.codiga.io/project/33752/score/svg" alt="Code Score" />
 </a>
 
-<a href="https://app.codiga.io/public/user/github/WarBringerLT>">
+<a href="https://app.codiga.io/public/user/github/WarBringerLT">
    <img src="https://app.codiga.io/public/badge/user/github/WarBringerLT" alt="Codiga badge" />
 </a>
 
