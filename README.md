@@ -6,8 +6,8 @@
    <img src="https://api.codiga.io/project/33752/score/svg" alt="Code Score" />
 </a>
 
-<a href="https://app.codiga.io/public/user/github/WarBringerLT">
-   <img src="https://app.codiga.io/public/badge/user/github/WarBringerLT" alt="Codiga badge" />
+<a href="https://app.codiga.io/hub/user/github/WarBringerLT">
+   <img src="https://api.codiga.io/public/badge/user/github/WarBringerLT?style=dark" alt="codiga badge" />
 </a>
 
 # Python Logging Simplifier
