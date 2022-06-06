@@ -1,3 +1,7 @@
+<a href="https://app.codiga.io/public/user/github/<username>">
+   <img src="https://app.codiga.io/public/badge/user/github/<username>" alt="Codiga badge" />
+</a>
+
 # Python Logging Simplifier
 It will automatically create log folder, create log file, and append all logs.
 Basically it handles the heavy lifting, while leaving blazing fast performance.
