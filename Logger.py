@@ -31,10 +31,9 @@ class Logging:
 	Verbose_Output = True # True/False - Whether show output from Logging Module
 	
 	def __init__(self):
-		global Timestamp,Todays_Date,Log_Folder,Log_File,Verbose_Output
-		
 		# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
 		# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
+		# Change Below (if Needed) (Default: "LOCALTIME")
 		self.Timestamp_Setting = "LOCALTIME"
 		
 		if self.Timestamp_Setting == "LOCALTIME": 
@@ -52,9 +51,9 @@ class Logging:
 		if not path.isfile(self.Log_File):
 			if self.Verbose_Output:
 				print(f"{self.Timestamp} Today's Log File was not found - attempting to create one...")
-			logfile = open(self.Log_File,'w')
-			logfile.write(f"#> Log File was first generated at {ctime()}.")
-			logfile.close()
+			with open(self.Log_File, 'w', encoding='utf-8') as logfile:
+				logfile.write(f"#> Log File was first generated at {ctime()}.")
+			
 
 	def log(self, message, code=0, ifprint = True):
 		# self    = self.
@@ -65,9 +64,8 @@ class Logging:
 		#if specified with False parameter
 
 		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}] - {message}"
-		f = open(Logging.Log_File,'a')
-		f.write('\n'+FinalLog)
-		f.close()
+		with open(self.Log_File, 'a', encoding='utf-8') as logfile:
+			logfile.write('\n'+FinalLog)
 		if Logging.Verbose_Output or ifprint:
 			try:
 				Logging.print(self, message, code)
