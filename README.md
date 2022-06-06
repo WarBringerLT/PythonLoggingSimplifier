@@ -1,5 +1,5 @@
-<a href="https://app.codiga.io/public/user/github/<username>">
-   <img src="https://app.codiga.io/public/badge/user/github/<username>" alt="Codiga badge" />
+<a href="https://app.codiga.io/public/user/github/WarBringerLT">
+   <img src="https://app.codiga.io/public/badge/user/github/WarBringerLT" alt="Codiga badge" />
 </a>
 
 # Python Logging Simplifier
