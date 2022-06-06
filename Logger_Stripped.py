@@ -31,15 +31,12 @@ class Logging:
 			mkdir(self.Log_Folder)
 		if not path.isfile(self.Log_File):
 			if self.Verbose_Output: print(f"{self.Timestamp} Today's Log File was not found - attempting to create one...")
-			logfile = open(self.Log_File,'w')
-			logfile.write(f"#> Log File was first generated at {ctime()}.")
-			logfile.close()
+			with open(self.Log_File, 'w', encoding='utf-8') as logfile: logfile.write(f"#> Log File was first generated at {ctime()}.")
+			
 
 	def log(self, message, code = 0, ifprint = True):
 		FinalLog = f"{self.Timestamp} [{Error_Codes[int(code)]}]: {message}"
-		f = open(Logging.Log_File,'a')
-		f.write('\n'+FinalLog)
-		f.close()
+		with open(self.Log_File, 'a', encoding='utf-8') as logfile: logfile.write('\n'+FinalLog)
 		if Logging.Verbose_Output or ifprint:
 			try: Logging.print(self, message, code)
 			except TypeError: Logging.print(message, code)
