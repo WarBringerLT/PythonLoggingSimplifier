@@ -13,7 +13,6 @@ from datetime import datetime
 #################################
 
 ### [SCRIPT INIT]
-script_init_time = time() # Calculate how long it took for the module to load later
 chdir(path.dirname(argv[0])) # CHANGE THE SCRIPT WORKING  DIRECTORY TO .py File Location
 
 ## [ERROR CODE LEVELS]
@@ -22,24 +21,25 @@ Error_Codes = [ "INFO",    # ID 0
 				"ERROR",   # ID 2
 				"CRITICAL" # ID 3
 				] # Continue etc...
-
-## [MAIN PRINT AND SAVE MODULE]
 class Logging:
+	script_init_time = time() # No touchy touchy. Getting time when the class was first started
+	# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
+	# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
+	# Change Below (if Needed) (Default: "LOCALTIME")
+	Timestamp_Setting = "LOCALTIME"
 	Todays_Date = datetime.today().strftime('%d-%m-%Y')
 	Log_Folder = "Logs/"
 	Log_File   = Log_Folder + Todays_Date + '.ini' # - Log file will be DD-MM-YYYY.ini Files 
 	Verbose_Output = True # True/False - Whether show output from Logging Module
-	
 	def __init__(self):
-		# SELECT Timestamp_Setting:    "LOCALTIME" (LOCALTIME OF PC)  [DEFAULT PRINT: HH:MM:SS]
-		# OR SELECT Timestamp_Setting: "RUNTIME" (RUNTIME of the app) [DEFAULT PRINT: [0.0s] ]
-		# Change Below (if Needed) (Default: "LOCALTIME")
-		self.Timestamp_Setting = "LOCALTIME"
-		
-		if self.Timestamp_Setting == "LOCALTIME": 
+		if Logging.Timestamp_Setting == "LOCALTIME":
 			self.Timestamp = datetime.now().strftime('[%H:%M:%S] ')
-		else: 
-			self.Timestamp = f"[{round(time()-Logging.script_init_time,3)}s]>"	
+		else:
+			self.Timestamp = f"[{round(time()-Logging.script_init_time,3)}s]>"
+
+
+		
+		
 			
 		# Code below will check whether LOGS FOLDER exists, if not, generate one
 		if not path.isdir(self.Log_Folder):
@@ -83,7 +83,7 @@ class Logging:
 if __name__ == "__main__": # IF SCRIPT IS LAUNCHED DIRECTLY
 	Logging = Logging() # INITIALIZE Logging System
 	# Print Succesfull Start
-	Logging.log(f"Logging Started - Init Successful - Time Taken: {time()-script_init_time}s")
+	Logging.log(f"Logging Started - Init Successful - Time Taken: {time()-Logging.script_init_time}s")
 	print(f"Log File: {Logging.Log_File}")
 	print(f"File Directory Created: {path.isfile(Logging.Log_File)}")
 	print(f"Found Total: {len(Error_Codes)} Error_Codes Codes. Cycling Through All of them")
