@@ -1,3 +1,7 @@
+<a href="https://app.codiga.io/hub/user/github/WarBringerLT">
+   <img src="https://api.codiga.io/public/badge/user/github/WarBringerLT?style=dark" alt="codiga badge" />
+</a>
+
 <a href="https://app.codiga.io/public/user/github/WarBringerLT">
    <img src="https://api.codiga.io/project/33752/status/svg" alt="Code Status" />
 </a>
@@ -6,9 +10,7 @@
    <img src="https://api.codiga.io/project/33752/score/svg" alt="Code Score" />
 </a>
 
-<a href="https://app.codiga.io/hub/user/github/WarBringerLT">
-   <img src="https://api.codiga.io/public/badge/user/github/WarBringerLT?style=dark" alt="codiga badge" />
-</a>
+
 
 # Python Logging Simplifier
 It will automatically create log folder, create log file, and append all logs.
